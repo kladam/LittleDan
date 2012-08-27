@@ -21,6 +21,10 @@ var Utility = (function(){
         // to be implemented
     };
 
+    Utility.prototype.getImage = function(name){
+        return this.imgLib[name];
+    };
+
     return Utility;
 
 }());
