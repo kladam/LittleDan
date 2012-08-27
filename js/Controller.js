@@ -9,7 +9,7 @@ var Controller = (function(){
     {
         for(var i = 0; i < this.obj[name].length; i++)
         {
-            this.obj[name][i]['func'].apply(this.obj[name][i]['scope'], data);
+            this.obj[name][i]['func'].call(this.obj[name][i]['scope'], data);
         }
     };
 
