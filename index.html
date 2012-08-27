@@ -8,7 +8,31 @@
         <script src="js/Utility.js"></script>
         <script src="js/GameLoop.js"></script>
         <script src="js/GameObject.js"></script>
+        <script src="js/LittleDan.js"></script>
         <script>
+            window.requestAnimFrame = (function()
+            {
+              return  window.requestAnimationFrame       ||
+                      window.webkitRequestAnimationFrame ||
+                      window.mozRequestAnimationFrame    ||
+                      window.oRequestAnimationFrame      ||
+                      window.msRequestAnimationFrame     ||
+                      function(/* function */ callback, /* DOMElement */ element){
+                        window.setTimeout(callback, 1000 / 60);
+                      };
+            })();
+
+            $(document).ready(function(){
+                var littleDan = new LittleDan();
+                littleDan.init($('#stage')[0], 800, 600);
+
+                function animate()
+                {
+                    requestAnimFrame(animate);
+                    littleDan.tick();
+                }
+                animate();
+            });
 
         </script>
 
