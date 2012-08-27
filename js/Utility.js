@@ -5,6 +5,10 @@ var Utility = (function(){
         this.imgLib = {};
     }
 
+    Utility.prototype.init = function(/*controller*/){
+        // this.controller = controller;
+    };
+
     Utility.prototype.loadImage = function(name, url){
         var img = new Image();
         img.src = url;
@@ -12,6 +16,7 @@ var Utility = (function(){
 
         img.onload = function(){
             // dispatch event image loaded (name)
+            // controller.dispatchEvent('ImageLoaded_' + name, this);
         };
 
         this.imgLib[name] = img;
