@@ -10,7 +10,7 @@ var GameObject = (function()
 		this.ys = 0;
 	}
 
-	GameObect.prototype.draw = function(){};
+	GameObject.prototype.draw = function(){};
 
 	return GameObject;
 }());
